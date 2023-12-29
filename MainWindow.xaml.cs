@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Notepad__
 {
@@ -19,7 +20,6 @@ namespace Notepad__
         public MainWindow()
         {
             InitializeComponent();
-            //textbox.IsReadOnly = true;
         }
 
         private void OpenFile(object sender, RoutedEventArgs e)
@@ -33,6 +33,8 @@ namespace Notepad__
                 // Open document 
                 string filename = dlg.FileName;
                 textbox.Content = filename;
+
+                FileContent.Text = File.ReadAllText(filename);
             }
         }
 
