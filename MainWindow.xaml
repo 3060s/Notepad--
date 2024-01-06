@@ -12,9 +12,15 @@
             <Setter Property="Width" Value="100"/>
         </Style>
 
-        <Style TargetType="Label">
+        <Style x:Key="textbox" TargetType="Label">
             <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+
+        <Style x:Key="savedbox" TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Rubik"/>
         </Style>
     </Window.Resources>
 
@@ -29,7 +35,8 @@
                 <Button Click="OpenFile" Content="Open File"/>
                 <Button Click="SaveFile" Content="Save"/>
                 <Button Click="SaveAsFile" Content="Save As"/>
-                <Label x:Name="textbox" Width="300" Height="25" Margin="200, 0, 0, 0"/>
+                <Label x:Name="savedbox" Style="{StaticResource savedbox}" Content="Saved!" Width="100" Height="25" Margin="65, 0, 0, 0"/>
+                <Label x:Name="textbox" Style="{StaticResource textbox}" Width="300" Height="25" Margin="100, 0, 0, 0"/>
             </StackPanel>
         </Border>
 
